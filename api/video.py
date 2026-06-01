@@ -62,6 +62,11 @@ def get_video_stats():
 
         posted_at = datetime.fromtimestamp(int(item["createTime"]), tz=timezone.utc).strftime("%d/%m/%Y")
 
+        like = stats["diggCount"]
+        comment = stats["commentCount"]
+        share = stats["shareCount"]
+        save = int(stats["collectCount"])
+
         return jsonify({
             "success": True,
             "video_id": video_id,
@@ -69,10 +74,11 @@ def get_video_stats():
             "posted_at": posted_at,
             "view": stats["playCount"],
             "estimated_reach": int(stats["playCount"] / 1.5),
-            "like": stats["diggCount"],
-            "comment": stats["commentCount"],
-            "share": stats["shareCount"],
-            "save": stats["collectCount"]
+            "engagement": like + comment + share + save,
+            "like": like,
+            "comment": comment,
+            "share": share,
+            "save": save
         })
 
     except Exception as e:
