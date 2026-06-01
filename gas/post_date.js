@@ -1,5 +1,5 @@
 // ======================================
-// ใช้ในชีต: =GET_TIKTOK_POST_DATE(A2)
+// ใช้ในชีต: =GET_TIKTOK_POST_DATE_V2(A2)
 // คืนค่า: วันที่โพสต์ในรูปแบบ DD/MM/YYYY
 // ======================================
 
@@ -29,7 +29,7 @@ function _backoffFetch_date_(url, options, maxRetries) {
   }
 }
 
-function GET_TIKTOK_POST_DATE(videoUrl) {
+function GET_TIKTOK_POST_DATE_V2(videoUrl) {
   if (!videoUrl) return "";
 
   var cacheKey = "date::" + String(videoUrl).trim();

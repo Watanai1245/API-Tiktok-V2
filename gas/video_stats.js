@@ -1,5 +1,5 @@
 // ======================================
-// ใช้ในชีต: =GET_TIKTOK_VIDEO_STATS(A2)
+// ใช้ในชีต: =GET_TIKTOK_VIDEO_STATS_V2(A2)
 // คืนค่า 7 คอลัมน์: Reach, Engagement, Views, Reaction, Comment, Share, Save
 // ======================================
 
@@ -29,7 +29,7 @@ function _backoffFetch_video_(url, options, maxRetries) {
   }
 }
 
-function GET_TIKTOK_VIDEO_STATS(videoUrl) {
+function GET_TIKTOK_VIDEO_STATS_V2(videoUrl) {
   if (!videoUrl) return [["", "", "", "", "", "", ""]];
 
   var cacheKey = "video::" + String(videoUrl).trim();

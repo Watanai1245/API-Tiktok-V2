@@ -1,5 +1,5 @@
 // ======================================
-// ใช้ในชีต: =GET_TIKTOK_FOLLOWERS(A2)
+// ใช้ในชีต: =GET_TIKTOK_FOLLOWERS_V2(A2)
 // คืนค่า: จำนวน followers (integer)
 // ======================================
 
@@ -29,7 +29,7 @@ function _backoffFetch_followers_(url, options, maxRetries) {
   }
 }
 
-function GET_TIKTOK_FOLLOWERS(username) {
+function GET_TIKTOK_FOLLOWERS_V2(username) {
   if (!username) return "";
 
   username = String(username).trim().replace(/^@/, "");
