@@ -60,7 +60,7 @@ def get_video_stats():
         item = data["__DEFAULT_SCOPE__"]["webapp.video-detail"]["itemInfo"]["itemStruct"]
         stats = item["stats"]
 
-        posted_at = datetime.fromtimestamp(item["createTime"], tz=timezone.utc).strftime("%d/%m/%Y")
+        posted_at = datetime.fromtimestamp(int(item["createTime"]), tz=timezone.utc).strftime("%d/%m/%Y")
 
         return jsonify({
             "success": True,
